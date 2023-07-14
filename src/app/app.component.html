@@ -1,0 +1,18 @@
+<nav>
+    <div>
+        <a routerLink="">Book shop</a>
+    </div>
+    <div>
+      <a routerLink="/cart">MyCart</a>
+      <ng-container *ngIf="!isAuthenticated()">
+        <a routerLink="/login">Login</a>
+        <a routerLink="/register">register</a>
+      </ng-container>
+      <ng-container *ngIf="isAuthenticated()">
+        <button (click)="logout()">Logout</button>
+      </ng-container>
+    </div>
+</nav>
+<div class="container">
+<router-outlet></router-outlet>
+</div>

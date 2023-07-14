@@ -1,0 +1,14 @@
+button{
+    background-color: yellow;
+    color: black;
+}
+li{
+    list-style: none;
+    text-overflow: ellipsis;
+    text-align: center;
+    width:200px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+    
+}

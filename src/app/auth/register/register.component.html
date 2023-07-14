@@ -1,0 +1,32 @@
+<div class="form">
+    <form (ngSubmit)="submit()" #myForm="ngForm" >
+        <h1>Register</h1>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email"  [(ngModel)]="Form.email" name="email" #email="ngModel" required>
+        </div>
+        <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="alert" [hidden]="email.valid">
+            email field must be valid
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="password"  [(ngModel)]="Form.password" name="password" #password="ngModel" required>
+        </div>
+        <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="alert" [hidden]="password.valid">
+            password must be valid
+        </div>
+        <div>
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="password" placeholder="confirm password"  [(ngModel)]="Form.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required>
+        </div>
+        <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty ||confirmPassword.touched)" class="alert" [hidden]="confirmPassword.valid">
+            password must be valid
+        </div>
+        <div>
+            <button type="submit" id="submit" [disabled]="myForm.form.invalid">
+                <ng-container *ngIf="isLoading()">Loading...</ng-container>
+                <ng-container *ngIf="!isLoading()">submit</ng-container>
+            </button>
+        </div>
+    </form>
+</div>
